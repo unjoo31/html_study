@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- h태그는 제목에 사용한다 -->
+    <h1>다람쥐 헌 쳇바퀴에 타고파</h1>
+    <h2>다람쥐 헌 쳇바퀴에 타고파</h2>
+    <h3>다람쥐 헌 쳇바퀴에 타고파</h3>
+    <h4>다람쥐 헌 쳇바퀴에 타고파</h4>
+    <h5>다람쥐 헌 쳇바퀴에 타고파</h5>
+    <h6>다람쥐 헌 쳇바퀴에 타고파</h6>
+
+    <!-- hr 태그는 구분선을 그려준다 -->
+    <hr />
+
+    <!-- p태그는 문단 구분용도로 사용한다 -->
+    <p>안녕하세요. 제이본 입니다.</p>
+
+    <!-- div태그는 내용 구분용도로 사용한다. 사용할 태그가 마땅치 않을 때 사용 -->
+    <div class="game">
+      <p>... 게임 관련 내용</p>
+    </div>
+    <div class="tv">
+      <p>... tv 관련 내용</p>
+    </div>
+    <hr />
+
+    <!-- details태그는 상세 내용을 접을 수 있다 -->
+    <details>
+      <summary>열기</summary>
+      <p>내용1</p>
+      <p>내용2</p>
+      <p>내용3</p>
+    </details>
+    <hr />
+
+    <!-- ul 태그는 순서가 없는 리스트 -->
+    <h1>장바구니</h1>
+    <ul>
+      <li>바나나</li>
+      <li>사과</li>
+      <li>수박</li>
+    </ul>
+    <hr />
+
+    <!-- ol 태그는 순서가 있는 리스트 -->
+    <h1>TODO List</h1>
+    <ol>
+      <li>아침 먹기</li>
+      <li>점심 먹기</li>
+      <li>저녁 먹기</li>
+      <li>양치 하기</li>
+    </ol>
+    <hr />
+
+    <!-- a태그는 하이퍼링크를 생성한다 -->
+    <!-- href 속성에 링크 주소를 입력한다 -->
+    <!-- target 속성에 띄울 탭을 선택한다 -->
+    <a href="https://www.naver.com" target="_blank">네이버로 이동</a>
+    <a href="https://www.google.com" target="_self">구글로 이동</a>
+    <hr />
+
+    <!-- img 태그는 이미지를 출력할 때 사용한다 -->
+    <img src="https://zrr.kr/N9WI" alt="우주 오리" width="400" height="50" />
+    <img src="./img/cat.jpg" alt="고양이" />
+    <img
+      src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202301/04/bemypet/20230104190107021brrt.png"
+      alt="고양이"
+    />
+    <hr />
+
+    <!-- strong은 글자를 굵게 만든다 -->
+    <p>이 기차 번호는 <strong>999</strong> 입니다.</p>
+    <hr />
+
+    <h1>텍스트 입력</h1>
+    <input type="text" name="id" value="기본 데이터" />
+    <h1>비밀번호 입력</h1>
+    <input type="password" name="pw" placeholder="비번을 입력해주세요" />
+    <h1>체크박스 입력</h1>
+    <input type="checkbox" name="cb" /> 체크하세요
+    <br />
+    <input type="checkbox" name="cb1" disabled /> 비활성
+    <h1>라디오 버튼 입력</h1>
+    <!-- 라디오 버튼의 name은 동일하게 설정해야 같이 움직인다 -->
+    <input type="radio" name="radio" checked />
+    <input type="radio" name="radio" />
+    <h1>이메일 입력</h1>
+    <input type="email" name="id" />
+    <h1>날짜 입력</h1>
+    <input type="date" name="date" />
+    <h1>파일 입력</h1>
+    <input type="file" name="id" />
+    <h1>범위 입력</h1>
+    <input type="range" name="id" />
+    <h1>색상 입력</h1>
+    <input type="color" />
+    <h1>숨김</h1>
+    <input type="hidden" value="2" />
+  </body>
+</html>
