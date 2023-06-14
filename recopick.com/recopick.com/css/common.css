@@ -1,0 +1,22 @@
+:root {
+    --main-width: 1228px;
+}
+
+@media (max-width: 1300px) {
+    :root {
+        --main-width: 91.5%;
+    }
+}
+
+[data-trigger] {
+    opacity: 0;
+}
+
+[data-trigger].visible {
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.hide {
+    display: none !important;
+}

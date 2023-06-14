@@ -1,0 +1,702 @@
+.header__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1000;
+    transition: 0.5s ease;
+}
+
+@media (min-width: 1025px) {
+    .header__inner.scroll__Down {
+        transform: translate(0, -56px);
+    }
+}
+
+.h-top {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* padding: 0 calc((100% - 1920px) / 2); */
+    border-bottom: 1px solid #ededed;
+    height: 56px;
+    padding: 0 48px;
+}
+
+.h-top a {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+}
+
+.ask-btn::before,
+.ask-btn::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    margin: 0 18px;
+    background: #000;
+}
+
+.lang-btn {
+    font-weight: 600;
+    color: #000;
+}
+
+.lang-btn.eng {
+    display: block;
+}
+
+.lang-btn.kor {
+    display: none;
+}
+
+.eng .lang-btn.eng {
+    display: none;
+}
+
+.eng .lang-btn.kor {
+    display: block;
+}
+
+.h-bot {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    /* padding: 0 calc((100% - 1920px) / 2); */
+}
+
+.h-logo-wrap {
+    width: 150px;
+    height: 40px;
+    margin-right: 120px;
+}
+
+.h-account-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.h-menu-wrap {
+    margin-right: auto;
+}
+
+.h-menu-wrap a {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.27px;
+    color: #242424;
+    margin-right: 80px;
+    transition: 0.25s ease;
+    position: relative;
+    will-change: width;
+}
+
+.h-menu-wrap a:hover {
+    color: #2323a5;
+}
+
+/* .h-menu-wrap a::before {
+  content: attr(data-fill-text);
+  position: absolute;
+  width: 0;
+  height: 100%;
+  color: #2323a5;
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  will-change: width;
+}
+
+.h-menu-wrap a:hover::before {
+  width: 100%;
+} */
+
+.h-join-btn {
+    width: 168px;
+    height: 36px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 0;
+    background: #2323a5;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.h-admin-btn {
+    width: 168px;
+    height: 36px;
+    border-radius: 18px;
+    border: solid 1px #242424;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 0;
+    color: #242424;
+}
+
+.h-top .h-logo-wrap {
+    display: none;
+}
+
+.hamburger_btn {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon/h-hamburger-menu.svg) no-repeat;
+}
+
+.hamburger_btn.is-active {
+    background: url("../img/icon/h-close.svg") no-repeat;
+}
+
+.h-bot .h-account-wrap {
+    display: none;
+}
+
+/* 팝업 스타일링 */
+
+.popup-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100vh;
+    z-index: 1001;
+}
+
+.popup {
+    width: 1000px;
+    padding: 50px 60px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    position: relative;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: #2323a5;
+    margin-bottom: 21px;
+}
+
+.popup-subinfo {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.67;
+    letter-spacing: -0.27px;
+    text-align: left;
+    color: #000;
+    margin-bottom: 40px;
+    word-break: keep-all;
+}
+
+.conts-l {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 40px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-name {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.24px;
+    text-align: left;
+    color: #000;
+}
+
+.input-box input[type="text"],
+.input-box input[type="password"] {
+    height: 44px;
+    padding: 0 16px;
+    border: solid 1px #d0d0d0;
+    margin-top: 12px;
+}
+
+.popup-conts {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+}
+
+.popup-conts .input-box input[type="text"],
+.popup-conts .input-box input[type="password"] {
+    height: 44px;
+    padding: 0 16px;
+    border: solid 1px #d0d0d0;
+    margin-top: 12px;
+}
+
+.terms {
+    width: 266px;
+    height: 350px;
+    margin-top: 12px;
+    /*padding: 20px;*/
+    border: solid 1px #d0d0d0;
+    background-color: #f8f8f8;
+    /*overflow-x: hidden;*/
+    /*overflow-y: scroll;*/
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.86;
+    letter-spacing: -0.21px;
+    text-align: left;
+    color: #000;
+}
+
+.terms::-webkit-scrollbar {
+    display: block;
+}
+
+.radiobox {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.radiobox>div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.radiobox.eng>div {}
+
+.radiobox.eng .kind-box1,
+.radiobox.eng .kind-box2,
+.radiobox.eng .kind-box3,
+.radiobox.eng .kind-box4 {
+    width: 138px;
+}
+
+.radiobox.eng .kind-box1 label,
+.radiobox.eng .kind-box2 label,
+.radiobox.eng .kind-box3 label,
+.radiobox.eng .kind-box4 label {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.kind-box1,
+.kind-box2,
+.kind-box3,
+.kind-box4 {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    margin-top: 12px;
+}
+
+.radiobox input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: solid 1px #bebebe;
+    position: relative;
+    margin-right: 6px;
+}
+
+.radiobox label {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+    text-align: left;
+    color: #000;
+    /* margin-right: 20px; */
+}
+
+.radiobox input[type="radio"]:checked::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #2323a5;
+}
+
+.namebox {
+    margin-right: 20px;
+}
+
+.namebox,
+.emailbox {
+    width: calc(50% - 10px);
+}
+
+.namebox::placeholder,
+.emailbox::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+    text-align: left;
+    color: #bfbfbf;
+}
+
+.contsbox {
+    width: 100%;
+}
+
+.contsbox textarea {
+    width: 100%;
+    height: 182px;
+    padding: 16px;
+    border: solid 1px #d0d0d0;
+    margin-top: 12px;
+}
+
+.most {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+    text-align: center;
+    color: #ff4e00;
+    margin-left: 4px;
+}
+
+.input-info {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.21px;
+    text-align: left;
+    color: #ff4e00;
+    margin-top: 10px;
+    word-break: keep-all;
+}
+
+.terms-input {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* input 체크박스 만들기  */
+
+/*.terms-input input[type="checkbox"]:checked + label:after {*/
+
+/*  background: url(../img/icon/checkbox.svg) center / 80% no-repeat;*/
+
+/*  background-color: #2323a5;*/
+
+/*  border: 1px solid transparent;*/
+
+/*}*/
+
+/*.terms-input input[type="checkbox"] + label {*/
+
+/*  font-size: 14px;*/
+
+/*  font-weight: 500;*/
+
+/*  letter-spacing: -0.21px;*/
+
+/*  text-align: left;*/
+
+/*  color: #000;*/
+
+/*  display: flex;*/
+
+/*  align-items: center;*/
+
+/*}*/
+
+/*.terms-input input[type="checkbox"] + label:after {*/
+
+/*  content: "";*/
+
+/*  display: inline-block;*/
+
+/*  width: 16px;*/
+
+/*  height: 16px;*/
+
+/*  border-radius: 3px;*/
+
+/*  border: solid 1px #bebebe;*/
+
+/*  background: none;*/
+
+/*  margin-left: 10px;*/
+
+/*}*/
+
+.p-btn-box {
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+.p-btn-box button {
+    width: 152px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 24px;
+}
+
+.cancel-btn {
+    border: solid 1px #242424;
+    color: #242424;
+    margin-right: 20px;
+}
+
+.send-btn {
+    color: #fff;
+    background-color: #2323a5;
+}
+
+.link-naver {
+    margin-right: 15px;
+}
+
+.link-youtube {
+    margin-right: 40px;
+}
+
+.h-link-wrap {
+    display: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+    .h-menu-wrap a {
+        margin-right: 30px;
+    }
+    .h-bot .h-logo-wrap {
+        margin-right: 60px;
+    }
+    .h-join-btn {
+        width: 125px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .h-top,
+    .h-bot {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .h-bot .h-logo-wrap {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    .h-link-wrap {
+        display: flex;
+        margin-top: 30px;
+    }
+    .link-youtube {
+        margin-right: 0;
+    }
+    .h-top {
+        height: 60px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+        border-bottom: none;
+        padding: 0 4%;
+    }
+    .h-join-btn {
+        width: 168px;
+        margin-right: 0;
+    }
+    .h-top .h-logo-wrap {
+        display: block;
+        width: 128px;
+        height: fit-content;
+        margin-right: 0;
+    }
+    .h-top .h-account-wrap {
+        display: none;
+    }
+    .h-bot {
+        width: 375px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -150%;
+        display: block;
+        padding: 110px 20px 100px;
+        background-color: #fff;
+        /* display: none; */
+        transition: 0.6s;
+        overflow-y: scroll;
+        box-shadow: 0 0 50px rgb(0 0 0 / 20%);
+    }
+    .h-bot.is-active {
+        right: 0;
+    }
+    .h-bot .h-logo-wrap {
+        display: none;
+    }
+    .h-menu-wrap a {
+        display: block;
+        margin-bottom: 50px;
+    }
+    .h-menu-wrap a.is-active {
+        color: #204bbf;
+        /* font-weight: 700; */
+    }
+    /* .h-menu-wrap a::before {
+      content: attr(data-fill-text);
+      position: absolute;
+      width: 0;
+      height: 100%;
+      color: #2323a5;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+      will-change: width;
+    }
+
+    .h-menu-wrap a:hover::before {
+      width: 100%;
+    } */
+    .h-join-btn {
+        display: block;
+        margin: 166px auto 20px auto;
+    }
+    .h-admin-btn {
+        display: block;
+        margin: 0 auto;
+    }
+    .h-bot .h-account-wrap {
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    .hamburger_btn {
+        display: block;
+    }
+    /* 고객문의 팝업 반응형 */
+    .popup {
+        width: 90%;
+        padding: 30px 0;
+    }
+    .popup-title {
+        font-size: 18px;
+        margin-bottom: 17px;
+        padding: 0 30px;
+    }
+    .popup-subinfo {
+        font-size: 15px;
+        margin-bottom: 30px;
+        padding: 0 30px;
+    }
+    .popup-conts {
+        padding: 20px 30px 50px 30px;
+    }
+    .p-btn-box {
+        padding: 0 30px;
+    }
+    .radiobox label {
+        margin-right: 16px;
+    }
+}
+
+.mo-br {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .popup-conts {
+        flex-direction: column;
+        max-height: 450px;
+        overflow-y: scroll;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .conts-l {
+        width: 100%;
+        margin-right: 0;
+    }
+    .conts-r {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .terms {
+        width: 100%;
+    }
+    .contsbox textarea {
+        width: 100%;
+        height: 176px;
+    }
+    .p-btn-box {
+        margin-top: 30px;
+    }
+    .p-btn-box button {
+        width: 130px;
+    }
+}
+
+@media (max-width: 700px) {
+    .p-btn-box {
+        margin-right: auto;
+    }
+    .namebox,
+    .emailbox {
+        width: 100%;
+    }
+    .namebox {
+        margin-right: 0;
+    }
+    .emailbox {
+        margin-top: 20px;
+    }
+    .cancel-btn {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .h-bot {
+        width: 100%;
+    }
+    .mo-br {
+        display: block;
+    }
+}
+
+.ask-btn {
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .h-account-wrap.eng a {
+        font-size: 14px;
+    }
+}

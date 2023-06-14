@@ -1,0 +1,429 @@
+* {
+    -webkit-text-size-adjust: none;
+    box-sizing: border-box;
+}
+
+/* 모든 Device를 위한 공통 로드 */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "pretendard", sans-serif;
+    font-size: 16px;
+    color: #212121;
+    background-color: #fff;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure,
+figcaption,
+span {
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.5px;
+}
+
+body,
+html,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+dt,
+dd,
+p hr,
+button,
+input,
+form,
+fieldset,
+table,
+caption,
+th,
+td,
+header,
+nav,
+section,
+article,
+aside,
+footer,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+legend,
+caption {
+    text-indent: -100%;
+    *text-indent: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-shadow: none;
+    color: transparent;
+}
+
+img {
+    max-width: 100%;
+    border: 0;
+    vertical-align: top;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: none;
+    text-align: left;
+}
+
+th,
+label {
+    font-weight: normal;
+}
+
+address {
+    font-style: normal;
+}
+
+button,
+input {
+    border: none;
+    background: none;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+button,
+a,
+input,
+label {
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+    font-family: "pretendard", sans-serif;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled,
+button:disabled {
+    cursor: no-drop;
+}
+
+input[type="checkbox"]:disabled+label,
+input[type="radio"]:disabled+label {
+    cursor: no-drop;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="text"],
+input[type="password"] {
+    cursor: text;
+}
+
+input::placeholder {
+    font-family: "pretendard", sans-serif;
+}
+
+textarea {
+    resize: none;
+    font-family: "pretendard", sans-serif;
+}
+
+textarea:placeholder {
+    color: #6b6b6b;
+    font-family: "pretendard", sans-serif;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+/* select*/
+
+select {
+    border-radius: 0;
+    /* 아이폰 사파리 보더 없애기 */
+    -webkit-appearance: none;
+    /* 화살표 없애기 for chrome*/
+    -moz-appearance: none;
+    /* 화살표 없애기 for firefox*/
+    appearance: none;
+    /* 화살표 없애기 공통*/
+}
+
+select::-ms-expand {
+    display: none;
+    /* 화살표 없애기 for IE10, 11*/
+}
+
+/* 공통 컨텐츠 font */
+
+@media only screen and (max-width: 1460px) {}
+
+@media only screen and (min-width: 1461px) {}
+
+/* input 체크박스 만들기  */
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+label::before {
+    background: url(../img/join/checkbox_on.svg) center / 100% no-repeat;
+}
+
+input[type="checkbox"]+label {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"]+label::before {
+    content: "";
+    display: inline-block;
+    margin-right: 16px;
+    width: 22px;
+    height: 22px;
+    background: url(../img/join/checkbox_off.svg) center / 100% no-repeat;
+}
+
+mark {
+    background: none;
+}
+
+.eng input[type="checkbox"]+label {
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    input[type="checkbox"]+label {
+        font-size: 16px;
+    }
+}
+
+/* 기본 폰트 */
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../font/pretendard/Pretendard-Black.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../font/pretendard/Pretendard-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/pretendard/Pretendard-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../font/pretendard/Pretendard-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../font/pretendard/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/pretendard/Pretendard-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../font/pretendard/Pretendard-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 200;
+    src: url("../font/pretendard/Pretendard-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../font/pretendard/Pretendard-Thin.woff") format("woff");
+}
+
+/* 소라 폰트 */
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("../font/sora/Sora-Thin.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("../font/sora/Sora-ExtraLight.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("../font/sora/Sora-Light.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../font/sora/Sora-Regular.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../font/sora/Sora-Medium.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../font/sora/Sora-SemiBold.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../font/sora/Sora-Bold.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+@font-face {
+    font-family: "pretendard";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("../font/sora/Sora-ExtraBold.ttf") format("truetype");
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}

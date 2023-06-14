@@ -1,0 +1,43 @@
+<footer class="footer">
+    <div class="inner">
+        <div>
+            <span class="f-term1"><a href="javascript:popupOpen('/terms')">이용약관</a></span>
+            <span class="f-term2" style="font-weight: bolder"><a href="javascript:popupOpen('/privacy/policy')">개인정보처리방침</a></span>
+            <div class="f-mail"><a href="mailto:recopick_biz@skplanet.com" style="color:#000000">recopick_biz@skplanet.com</a></div>
+            <div class="f-box-wrap">
+                <div class="f-box-l">
+                    <span>사업 등록번호 : 104-86-36968</span>
+                    <span>통신판매업신고번호 : 2014-경기성남0036</span>
+                </div>
+                <div class="f-box-r">
+                    <span>대표이사 이한상</span>
+                    <span>경기도 성남시 분당구 판교로 264 SK플래닛</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    function popupOpenWithOptions(popUrl, name, width, height) {
+        // argument check
+        if (popUrl === undefined || name === undefined || width === undefined || height === undefined) {
+            throw "Undefined";
+        }
+        var widthOption = "width=" + width;
+        var heightOption = "height=" + height;
+
+        var popupOptions = [];
+        popupOptions.push(widthOption);
+        popupOptions.push(heightOption);
+        popupOptions.push("resizable=yes");
+        popupOptions.push("scrollbars=yes");
+        popupOptions.push("status=no");
+        var popOption = popupOptions.join();
+
+        window.open(popUrl, name, popOption);
+    }
+
+    function popupOpen(popUrl) {
+        popupOpenWithOptions(popUrl, "_blank", 685, 500);
+    }
+</script>

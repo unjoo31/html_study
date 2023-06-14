@@ -1,0 +1,236 @@
+<header class="header">
+    <div class="header__inner">
+        <div class="h-top">
+            <div class="h-logo-wrap">
+                <a href="/"><img src="../img/logo/logo.svg" alt="logo" /></a>
+            </div>
+            <div class="h-account-wrap">
+                <a href="/notice" class="notice-btn">공지사항</a>
+                <a href="#" class="ask-btn">고객문의</a>
+                <a href="#" class="lang-btn">English</a>
+            </div>
+            <button class="hamburger_btn"></button>
+        </div>
+        <div class="h-bot">
+            <div class="h-logo-wrap">
+                <a href="/"><img src="../img/logo/logo.svg" alt="logo" /></a>
+            </div>
+            <div class="h-menu-wrap">
+                <a href="/recopick_products" data-fill-text="레코픽 서비스">레코픽 서비스</a>
+                <a href="/recopick_guide" data-fill-text="이용안내">이용안내</a>
+                <a href="//docs.recopick.com" data-fill-text="기술가이드">기술가이드</a>
+            </div>
+            <button class="h-join-btn" onclick="location.href='/join/apply'">가입신청 문의</button>
+            <button class="h-admin-btn" onclick="window.open('//admin.recopick.com');">Admin DashBoard</button>
+            <div class="h-account-wrap">
+                <a href="/notice" class="notice-btn">공지사항</a>
+                <a href="#" class="ask-btn">고객문의</a>
+                <a href="#" class="lang-btn">English</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 고객문의 팝업 -->
+<!-- hide 클래스 삭제시 팝업 활성화 -->
+<div class="popup-wrap ask_popup-wrap hide">
+    <div class="popup">
+        <span class="popup-title">Recopick 고객문의</span>
+        <span class="popup-subinfo">답변을 위해 작성자 정보와 문의하실 내용을<br class="mo-br"> 작성해 주시면 빠른 시일 내에 회신드리겠습니다.</span>
+        <div class="popup-conts">
+            <div class="conts-l">
+                <div class="input-box namebox">
+                    <span class="input-name">작성자<mark class="most">*</mark></span>
+                    <input id="inquire_name" type="text" placeholder="작성자명을 입력해주세요." />
+                </div>
+                <div class="input-box emailbox">
+                    <span class="input-name">이메일주소<mark class="most">*</mark></span>
+                    <input id="inquire_email" type="text" placeholder="이메일주소를 입력해주세요." />
+                </div>
+                <div class="input-box radiobox">
+                    <span class="input-name">문의사항<mark class="most">*</mark></span>
+                    <div>
+                        <div class="kind-box1">
+                            <input type="radio" id="kind1" name="qna_kind" value="이용문의" checked>
+                            <label for="kind1">이용문의</label>
+                        </div>
+                        <div class="kind-box2">
+                            <input type="radio" id="kind2" name="qna_kind" value="동작이상">
+                            <label for="kind2">동작이상</label>
+                        </div>
+                        <div class="kind-box3">
+                            <input type="radio" id="kind3" name="qna_kind" value="개선사항">
+                            <label for="kind3">개선사항</label>
+                        </div>
+                        <div class="kind-box4">
+                            <input type="radio" id="kind4" name="qna_kind" value="기타">
+                            <label for="kind4">기타</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-box contsbox">
+                    <span class="input-name">내용<mark class="most">*</mark></span>
+                    <textarea name="inquire_content" id="inquire_content" cols="30" rows="10" placeholder="문의내용을 입력해주세요."></textarea>
+                </div>
+                <p class="input-info">
+                    게시글에 개인정보를 포함한 글을 올려 의도하지 않는<br class="mo-br"> 개인정보 유출 사고에 주의하세요.
+                </p>
+            </div>
+            <div class="conts-r">
+                <span class="input-name">개인정보 수집 및 이용 동의 (필수)</span>
+                <div class="terms">
+                    <iframe src="/privacy/enquiry" frameborder="0" style="position: relative; height: 100%; width: 100%;"></iframe>
+                </div>
+                <div class="terms-input">
+                    <input type="checkbox" name="" id="terms">
+                    <label for="terms">개인정보 수집 동의</label>
+                </div>
+            </div>
+        </div>
+        <div class="p-btn-box">
+            <button class="cancel-btn">취소</button>
+            <button id="inquire_submit" class="send-btn">문의하기</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    //  history.scrollRestoration = "auto";
+    //현재 위치를 기억하여 새로고침시 그자리를 유지한다.
+    // history.scrollRestoration = "manual";
+    // 새로고침시 최상단 이동.
+
+    // 모바일 - 햄버거 메뉴 활성화
+    $(".hamburger_btn").click(function() {
+        $(this).toggleClass("is-active");
+        $(".h-bot").toggleClass("is-active");
+    });
+    // 모바일 - 메뉴 각각 클릭 시
+    $(".h-menu-wrap a").each(function() {
+        $(this).click(function() {
+            $(this).addClass("is-active");
+            $(this).parent().children().not($(this)).removeClass("is-active");
+        });
+    });
+    $('.lang-btn').click(function(event) {
+        event.preventDefault();
+
+        var query = {};
+        location.search.substr(1).split("&").forEach(function(pair) {
+            if (pair === "") return;
+            var parts = pair.split("=");
+            query[parts[0]] = parts[1] &&
+                decodeURIComponent(parts[1].replace(/\+/g, " "));
+        });
+
+        query.locale = "en";
+        $(location).attr('href', $(location).attr('origin') + $(location).attr('pathname') + "?" + $.param(query));
+    });
+
+
+    addEventListener("scroll", function() {
+        if (scrollY > 10) {
+            document.querySelector(".header__inner").classList.add("scroll__Down");
+        } else {
+            document.querySelector(".header__inner").classList.remove("scroll__Down");
+        }
+    });
+
+    // 고객문의 팝업 활성화/비활성화
+    for (let i = 0; i < document.querySelectorAll(".ask-btn").length; i++) {
+        document.querySelectorAll(".ask-btn")[i].addEventListener("click", function() {
+            document.querySelector(".ask_popup-wrap").classList.remove("hide")
+        })
+    }
+    document.querySelector(".cancel-btn").addEventListener("click", function() {
+        document.querySelector(".ask_popup-wrap").classList.add("hide")
+    })
+
+    $('#inquire_submit').click(function() {
+        if ($('#terms')[0].checked) {
+            var emailAddress = $('#inquire_email')[0].value;
+            var customer = $('#inquire_name')[0].value;
+            var inquireContent = $('#inquire_content')[0].value;
+            var regExpEmail = /^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/;
+            // if (emailAddress.search(regExpEmail) == -1) {
+            //   $('#inquire_submit').focus()
+            //   return false;
+            // }
+
+            if (emailAddress.search(regExpEmail) == -1) {
+                alert("이메일 형식을 확인해주세요");
+                $('#inquire_email').focus();
+                return false;
+            }
+            if (customer.length == 0) {
+                alert("작성자 이름을 입력해주세요");
+                return false;
+            }
+            if (emailAddress.length == 0) {
+                alert("이메일을 입력해주세요");
+                return false;
+            }
+            if (inquireContent.length == 0) {
+                alert("내용을 입력해주세요");
+                return false;
+            }
+
+            var subject;
+            if (document.getElementsByName('qna_kind')[0].checked) {
+                subject = document.getElementsByName('qna_kind')[0].value;
+            } else if (document.getElementsByName('qna_kind')[1].checked) {
+                subject = document.getElementsByName('qna_kind')[1].value;
+            } else if (document.getElementsByName('qna_kind')[2].checked) {
+                subject = document.getElementsByName('qna_kind')[2].value;
+            } else if (document.getElementsByName('qna_kind')[3].checked) {
+                subject = document.getElementsByName('qna_kind')[3].value;
+            }
+
+            sendInquiryMail(customer, emailAddress, subject, inquireContent);
+
+        } else {
+            alert("개인정보 수집 동의에 체크해 주세요");
+        }
+    });
+
+    function closeInquiry() {
+        alert('문의사항이 전달되었습니다. 빠른 답변드리겠습니다.');
+
+        $('#inquire_email')[0].value = '';
+        $('#inquire_name')[0].value = '';
+        $('#inquire_content')[0].value = '';
+
+        document.querySelector(".ask_popup-wrap").classList.add("hide")
+    }
+
+    function sendInquiryMail(customer, emailAddress, subject, content) {
+        var ask_content =
+            "작성자 : " + customer + "\n" +
+            "고객 email : " + emailAddress + "\n" +
+            "문의사항 : " + subject + "\n" +
+            "내용 : " + content;
+        var ask_params = {
+            'title': '레코픽 고객문의',
+            'content': ask_content
+        };
+        $(document).ready(function() {
+            jQuery.ajax({
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(ask_params),
+                url: "/notification/send",
+                success: function(msg) {
+                    closeInquiry();
+                },
+                error: function(xhr, status, error) {
+                    if (xhr.responseText == "success" || xhr.status == 200) {
+                        closeInquiry();
+                    } else {
+                        alert('문의사항 전달이 실패하였습니다. 다시 시도해 주세요.');
+                    }
+                }
+            });
+        });
+    }
+</script>
